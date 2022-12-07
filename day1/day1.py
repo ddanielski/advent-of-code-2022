@@ -1,4 +1,9 @@
-with open('day1.txt') as f:
+import os
+
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+with open(os.path.join(__location__, 'day1.txt')) as f:
     lines = f.readlines()
     sum_cal = [0]
     tmp = 0

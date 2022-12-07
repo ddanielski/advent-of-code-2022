@@ -1,3 +1,6 @@
+import os
+
+
 def play_outcome_part1(str_list, rule, game_points):
     p1 = rule[str_list[0]]
     p2 = str_list[1]
@@ -38,7 +41,10 @@ def play_outcome_part2(str_list, rule, game_points):
 rule = {"A": "X", "B": "Y", "C": "Z", "X": "lost", "Y": "draw", "Z": "won"}
 game_points = {"won": 6, "draw": 3, "lost": 0, "X": 1, "Y": 2, "Z": 3}
 
-with open('day2.txt') as f:
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+with open(os.path.join(__location__, 'day2.txt')) as f:
     lines = f.readlines()
     score = 0
     for line in lines:
